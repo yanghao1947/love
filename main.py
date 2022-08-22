@@ -35,7 +35,7 @@ def get_birthday():
   return (next - today).days
 
 def get_menstrual_period():
-  next = date(2022, 9, 20) - today
+  next = datetime.strptime(2022-09-20, "%Y-%m-%d") - today
   return next.days
 
 def get_words():
