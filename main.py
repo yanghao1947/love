@@ -10,7 +10,7 @@ today = datetime.now()
 start_date = os.environ['START_DATE']
 city = os.environ['CITY']
 birthday = os.environ['BIRTHDAY']
-menstrual_period = os.environ["MENSTRUAL_PERIOD"]
+# menstrual_period = os.environ["MENSTRUAL_PERIOD"]
 
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
@@ -37,7 +37,7 @@ def get_birthday():
   return (next - today).days
 
 def get_menstrual_period():
-  next = datetime.strptime(menstrual_period, "%Y-%m-%d") - today
+  next = datetime.strptime(20220920, "%Y-%m-%d") - today
   return next.days
 
 def get_words():
