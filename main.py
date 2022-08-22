@@ -14,7 +14,7 @@ birthday = os.environ['BIRTHDAY']
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
 
-get_menstrual_period = os.environ["MENSTRUAL_PERIOD"]
+menstrual_period = os.environ["MENSTRUAL_PERIOD"]
 
 user_id = os.environ["USER_ID"]
 user_id_2 = os.environ["USER_ID_2"]
@@ -38,7 +38,7 @@ def get_birthday():
   return (next - today).days
 
 def get_menstrual_period():
-  next = datetime.strptime(get_menstrual_period, "%Y-%m-%d") - today
+  next = datetime.strptime(menstrual_period, "%Y-%m-%d") - today
   return next.days
 
 def get_words():
