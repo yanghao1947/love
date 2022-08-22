@@ -14,7 +14,10 @@ birthday = os.environ['BIRTHDAY']
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
 
+get_menstrual_period = os.environ["MENSTRUAL_PERIOD"]
+
 user_id = os.environ["USER_ID"]
+user_id_2 = os.environ["USER_ID_2"]
 template_id = os.environ["TEMPLATE_ID"]
 
 
@@ -35,7 +38,7 @@ def get_birthday():
   return (next - today).days
 
 def get_menstrual_period():
-  next = datetime.strptime(2022-09-20, "%Y-%m-%d") - today
+  next = datetime.strptime(get_menstrual_period, "%Y-%m-%d") - today
   return next.days
 
 def get_words():
@@ -54,4 +57,5 @@ wm = WeChatMessage(client)
 wea, temperature = get_weather()
 data = {"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"menstrual_period":{"value":get_menstrual_period()},"words":{"value":get_words(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
+res = wm.send_template(user_id_2, template_id, data)
 print(res)
