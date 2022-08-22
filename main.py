@@ -10,7 +10,6 @@ today = datetime.now()
 start_date = os.environ['START_DATE']
 city = os.environ['CITY']
 birthday = os.environ['BIRTHDAY']
-menstrual_period = os.environ['MENSTRUAL_PERIOD']
 
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
